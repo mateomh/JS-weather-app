@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Weather By Mm</title>
+</head>
+<body>
+  <nav id="city-nav">
+    <input type="text" name="city" id="city-name" placeholder="Type the city name">
+    <button id="send-button">Get Info</button>
+    <select name="" id="temp-units">
+      <option value="C" selected>Celsius</option>
+      <option value="F">Farenheit</option>
+      <option value="K">Kelvin</option>
+    </select>
+  </nav>
+  <section id="data-display">
+    <div id="general-info" class="hide">
+      <div class="data-board">
+        <h1 id="city"></h1>
+        <p id="coord"></p>
+        <p id="main-temp"></p>
+        <p id="weather"></p>
+      </div>
+    </div>
+    <div id="forecast-info">
+
+    </div>
+  </section>
+  <footer id="footer">
+    <p>Images provided by <a href="https://unsplash.com/developers" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
+    <p>Weather information provided by <a href="https://openweathermap.org/api" target="_blank" rel="noopener noreferrer">OpenWeatherMap</a></p>
+  </footer>
+  <script src="./main.js"></script>
+</body>
+</html>
