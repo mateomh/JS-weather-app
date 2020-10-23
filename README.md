@@ -22,7 +22,7 @@ This site was created using the open weather API for the data and the unsplash A
 
 ### Usage
 
-Everything you need to run the page is inside the **dist** folder of the project.
+Everything you need to run the page is inside the **dist** folder of the project. Just copy the index.html and the main.js from this folder and open the index.html in you browser. Both files should remain in the same folder for it to work.
 
 ## Author
 
