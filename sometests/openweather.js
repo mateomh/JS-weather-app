@@ -17,7 +17,8 @@ async function getWeatherInfo(city) {
   const response = await fetch(weatherApiURL);
   const realData = await response.json();
   const anotherdata = parseWeatherData(realData);
-  console.log(anotherdata);
+
+  return anotherdata;
 }
 
 getWeatherInfo('bogota');

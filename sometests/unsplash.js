@@ -15,10 +15,9 @@ async function getImage(type) {
   unsplashApiURL += `&client_id=${clientID}`;
   unsplashApiURL += `&query=${type}`;
 
-  console.log('before the fetch');
   const response = await fetch(unsplashApiURL, fetchOptions);
   const [realData] = await response.json();
-  console.log(realData.urls.raw);
+
   return realData.urls.raw;
 }
 

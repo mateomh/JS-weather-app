@@ -32,6 +32,7 @@ export function renderWeatherInfo(data) {
 }
 
 export function renderCityInfo(data) {
+  const general = document.getElementById('general-info');
   const city = document.getElementById('city');
   const coord = document.getElementById('coord');
   const temp = document.getElementById('main-temp');
@@ -42,6 +43,7 @@ export function renderCityInfo(data) {
   coord.innerText = `(LAT: ${data.lat} °N, LON: ${data.lon} °W)`;
   temp.innerText = `Temperature: ${data.temp} °${units.value}`;
   weather.innerText = data.weather_desc;
+  general.classList.remove('hide');
 }
 
 export function renderBackgrounds(city, weather) {
