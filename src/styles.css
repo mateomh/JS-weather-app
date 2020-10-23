@@ -42,8 +42,12 @@
   outline: none;
 }
 
+.warning {
+  border-color: crimson !important;
+}
+
 #send-button {
-  width: 20%;
+  width: 10%;
   text-align: center;
   border-radius: 5vh;
   border: 1vh solid var(--color1);
@@ -52,7 +56,6 @@
   background-color: var(--color1);
   color: whitesmoke;
   font-weight: bolder;
-  outline: none;
 }
 
 #temp-units {
@@ -90,11 +93,13 @@
 
 #forecast-info {
   width: 30%;
-  background-color: cyan;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .data-board {
@@ -126,6 +131,19 @@
   color: var(--color4);
   font-style: italic;
   font-weight: bolder;
+}
+
+li {
+  font-weight: bolder;
+  font-size: 4vh;
+  color: var(--color4);
+}
+
+h2 {
+  font-weight: bolder;
+  font-size: 5vh;
+  color: var(--color2);
+  text-decoration: underline;
 }
 
 

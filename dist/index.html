@@ -9,7 +9,7 @@
 <body>
   <nav id="city-nav">
     <input type="text" name="city" id="city-name" placeholder="Type the city name">
-    <button id="send-button">Get Weather Information</button>
+    <button id="send-button">Get Info</button>
     <select name="" id="temp-units">
       <option value="C" selected>Celsius</option>
       <option value="F">Farenheit</option>
@@ -19,26 +19,20 @@
   <section id="data-display">
     <div id="general-info">
       <div class="data-board">
-        <h1 id="city">Bogota</h1>
-        <p id="main-temp">Temperature: 80deg</p>
-        <p id="weather">Weather: description</p>
+        <h1 id="city"></h1>
+        <p id="coord"></p>
+        <p id="main-temp"></p>
+        <p id="weather"></p>
       </div>
     </div>
     <div id="forecast-info">
-      <div class="data-board">
-        <h2>Weatehr main</h2>
-        <p>max_temp: </p>
-        <p>min_temp: </p>
-        <p>Humidity</p>
-        <p>Lat: </p>
-        <p>Lon:</p>
-      </div>
+      
     </div>
   </section>
   <footer id="footer">
     <p>Images provided by <a href="https://unsplash.com/developers" target="_blank" rel="noopener noreferrer">Unsplash</a>  API</p>
     <p>Weather information provided by <a href="https://openweathermap.org/api" target="_blank" rel="noopener noreferrer">OpenWeatherMap</a> API</p>
   </footer>
-  <script src="../src/index.js"></script>
+  <script src="./main.js"></script>
 </body>
 </html>

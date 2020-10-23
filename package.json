@@ -4,7 +4,9 @@
   "description": "a basic weather app with js and apis",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "watch": "webpack --watch"
   },
   "repository": {
     "type": "git",
@@ -22,9 +24,14 @@
   },
   "homepage": "https://github.com/mateomh/JS-weather-app#readme",
   "devDependencies": {
+    "babel-loader": "^8.1.0",
+    "css-loader": "^5.0.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.2",
+    "file-loader": "^6.1.1",
+    "image-webpack-loader": "^7.0.1",
+    "style-loader": "^2.0.0",
     "stylelint": "^13.3.3",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-csstree-validator": "^1.8.0",
