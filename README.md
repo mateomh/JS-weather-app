@@ -4,7 +4,7 @@
 
 > This website displays the basic weather data from any city you want.
 
-![screenshot](https://icon-library.com/images/weather-icon-gif/weather-icon-gif-22.jpg)
+![screenshot](https://i.pinimg.com/originals/e8/9b/f6/e89bf6cf6cad8ca28985a98e0a59f5df.gif)
 
 This site was created using the open weather API for the data and the unsplash API for the images. The idea is to get used to the interaction with APIs to populate information on your pages. This is the fourth project in the Microvese technical curriculum for JavaScript.
 
