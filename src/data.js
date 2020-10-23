@@ -48,6 +48,14 @@ function noCityInfo() {
   };
 }
 
+function defaultImage(city) {
+  if (city === 'city') {
+    return 'https://images.unsplash.com/photo-1444723121867-7a241cacace9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80';
+  }
+
+  return 'https://images.unsplash.com/flagged/photo-1576045771676-7ac070c1ce72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60';
+}
+
 export async function getWeatherInfo(city) {
   const key = 'acb20f9ff5d6a288ecb4800af4426da3';
   let weatherApiURL = 'https://api.openweathermap.org/data/2.5/weather';
@@ -91,10 +99,6 @@ export async function getCityName() {
     name.classList.add('warning');
   } else {
     name.classList.remove('warning');
-    // data = await getWeatherInfo(name.value.toLowerCase()).catch(err => {
-    //   noCityInfo(err);
-    //   return '';
-    // });
     data = await getWeatherInfo(name.value.toLowerCase()).catch(noCityInfo);
     data = convertTemps(data);
     Render.renderCityInfo(data);
@@ -105,8 +109,8 @@ export async function getCityName() {
       cityimg = 'https://images.unsplash.com/photo-1579373903781-fd5c0c30c4cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80';
       weatherimg = 'https://images.unsplash.com/photo-1559144098-968b3904ca68?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80';
     } else {
-      cityimg = await getImage(`${name.value.toLowerCase()} city`);
-      weatherimg = await getImage(data.weather);
+      cityimg = await getImage(`${name.value.toLowerCase()} city`).catch(defaultImage('city'));
+      weatherimg = await getImage(data.weather).catch(defaultImage('weather'));
     }
 
     Render.renderBackgrounds(cityimg, weatherimg);
