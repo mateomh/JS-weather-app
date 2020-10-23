@@ -1,17 +1,34 @@
+/* eslint-disable arrow-body-style, camelcase */
+
 import * as Render from './renders';
 
 function parseWeatherData(data) {
-  return {
-    city: data.name,
-    temp: data.main.temp,
-    weather: data.weather[0].main,
-    weather_desc: data.weather[0].description,
-    min_temp: data.main.temp_min,
-    max_temp: data.main.temp_max,
-    humidity: data.main.humidity,
-    lat: data.coord.lat,
-    lon: data.coord.lon,
+  const {
+    name: city,
+    main: {
+      temp,
+      temp_min: min_temp,
+      temp_max: max_temp,
+      humidity,
+    },
+    coord: { lat, long },
+    weather: [weatherObj],
+  } = data;
+
+  const { main: weather, description: weather_desc } = weatherObj;
+
+  const obj = {
+    city,
+    temp,
+    min_temp,
+    max_temp,
+    humidity,
+    lat,
+    long,
+    weather,
+    weather_desc,
   };
+  return obj;
 }
 
 function convertTemps(data) {
@@ -52,7 +69,6 @@ function defaultImage(city) {
   if (city === 'city') {
     return 'https://images.unsplash.com/photo-1444723121867-7a241cacace9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80';
   }
-
   return 'https://images.unsplash.com/flagged/photo-1576045771676-7ac070c1ce72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60';
 }
 
@@ -88,7 +104,6 @@ export async function getImage(type) {
 
   const response = await fetch(unsplashApiURL, fetchOptions);
   const [realData] = await response.json();
-
   return realData.urls.regular;
 }
 
@@ -109,8 +124,8 @@ export async function getCityName() {
       cityimg = 'https://images.unsplash.com/photo-1579373903781-fd5c0c30c4cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80';
       weatherimg = 'https://images.unsplash.com/photo-1559144098-968b3904ca68?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80';
     } else {
-      cityimg = await getImage(`${name.value.toLowerCase()} city`).catch(defaultImage('city'));
-      weatherimg = await getImage(data.weather).catch(defaultImage('weather'));
+      cityimg = await getImage(`${name.value.toLowerCase()} city`).catch(() => { return defaultImage('city'); });
+      weatherimg = await getImage(data.weather).catch(() => { return defaultImage('weather'); });
     }
 
     Render.renderBackgrounds(cityimg, weatherimg);

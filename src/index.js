@@ -5,7 +5,6 @@ const header = document.getElementsByTagName('head')[0];
 const styleSheet = document.createElement('link');
 
 styleSheet.rel = 'stylesheet';
-styleSheet.type = 'text/css';
 styleSheet.href = css;
 
 header.appendChild(styleSheet);

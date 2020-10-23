@@ -56,6 +56,13 @@
   background-color: var(--color1);
   color: whitesmoke;
   font-weight: bolder;
+  outline: none;
+}
+
+#send-button:hover {
+  background-color: var(--color3);
+  border-color: var(--color3);
+  color: var(--color1);
 }
 
 #temp-units {
