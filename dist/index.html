@@ -7,6 +7,38 @@
   <title>Your Weather By Mm</title>
 </head>
 <body>
-  <script src="../sometests/openweather.js"></script>
+  <nav id="city-nav">
+    <input type="text" name="city" id="city-name" placeholder="Type the city name">
+    <button id="send-button">Get Weather Information</button>
+    <select name="" id="temp-units">
+      <option value="C" selected>Celsius</option>
+      <option value="F">Farenheit</option>
+      <option value="K">Kelvin</option>
+    </select>
+  </nav>
+  <section id="data-display">
+    <div id="general-info">
+      <div class="data-board">
+        <h1 id="city">Bogota</h1>
+        <p id="main-temp">Temperature: 80deg</p>
+        <p id="weather">Weather: description</p>
+      </div>
+    </div>
+    <div id="forecast-info">
+      <div class="data-board">
+        <h2>Weatehr main</h2>
+        <p>max_temp: </p>
+        <p>min_temp: </p>
+        <p>Humidity</p>
+        <p>Lat: </p>
+        <p>Lon:</p>
+      </div>
+    </div>
+  </section>
+  <footer id="footer">
+    <p>Images provided by <a href="https://unsplash.com/developers" target="_blank" rel="noopener noreferrer">Unsplash</a>  API</p>
+    <p>Weather information provided by <a href="https://openweathermap.org/api" target="_blank" rel="noopener noreferrer">OpenWeatherMap</a> API</p>
+  </footer>
+  <script src="../src/index.js"></script>
 </body>
 </html>

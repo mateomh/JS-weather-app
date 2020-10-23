@@ -15,9 +15,8 @@ async function getWeatherInfo(city) {
   weatherApiURL += `&appid=${key}`;
 
   const response = await fetch(weatherApiURL);
-  const realData = await response.json();
-  const anotherdata = parseWeatherData(realData);
-  console.log(anotherdata);
+  const rawData = await response.json();
+  return parseWeatherData(rawData);
 }
 
 getWeatherInfo('bogota');
